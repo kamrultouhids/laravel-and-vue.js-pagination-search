@@ -49,7 +49,7 @@
         methods: {
             update(id){
                 var vm = this;
-                axios.put('/users/'+id, this.form).then((response) => {
+                axios.put(base_url+'users/'+id, this.form).then((response) => {
                     $('#update-item').modal('hide');
                     EventBus.$emit('user-created', 1);
                     this.showMassage(response.data);
@@ -77,7 +77,7 @@
             var vm = this;
             EventBus.$on('update-buton-clicked', function(id){
                 $('#update-item').modal('show');
-                axios.get('/users/'+id).then((response) => {
+                axios.get(base_url+'users/'+id).then((response) => {
                     vm.form = response.data.data;
                 });
             });

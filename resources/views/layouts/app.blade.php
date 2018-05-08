@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
@@ -19,6 +19,9 @@
         [v-cloak] > * { display:none; }
         [v-cloak]::before { content: "loading..."; }
     </style>
+    <script type="text/javascript">
+        var base_url = "{{ url('/').'/' }}";
+    </script>
 </head>
 <body>
     <div id="my-app">
@@ -80,14 +83,7 @@
 
         @yield('content')
 
-
     </div>
-
-    {{--<div class="the-site-loader">
-        <div class="loader-wrapper">
-            <div class="loader" ></div>
-        </div>
-    </div>--}}
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

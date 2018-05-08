@@ -18,7 +18,7 @@ class UserController extends Controller
             if ($request->filter != '') {
                 $user = User::where('name', 'like', '%' . $request->filter . '%');
             }
-        $user = $user->paginate(10);
+        $user = $user->orderBy('id','desc')->paginate(10);
         return response()->json($user);
     }
 
