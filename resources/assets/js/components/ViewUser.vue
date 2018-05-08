@@ -61,7 +61,7 @@
             };
         },
         methods: {
-            index: function(pageNo,filter){
+            index(pageNo,filter){
                 if(pageNo){
                     pageNo = pageNo;
                 }else{
@@ -79,7 +79,7 @@
 
             },
 
-            deleteUser: function (id, index) {
+            deleteUser(id, index) {
                 var vueThis = this;
                 if (confirm("Do you really want to delete it?")) {
                     axios.delete(base_url+'users/' + id).then((response) => {

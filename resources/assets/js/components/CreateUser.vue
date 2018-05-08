@@ -61,7 +61,7 @@
         },
 
         methods: {
-            store: function () {
+            store() {
                 axios.post(base_url+'users', this.form).then((response) => {
                     $('#create-item').modal('hide');
                     this.form = {'name':'','email':'','password':'','password_confirmation':''};

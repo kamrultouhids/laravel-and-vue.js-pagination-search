@@ -1,4 +1,3 @@
-
 <template>
     <ul class="pagination" v-if="resultData.last_page > 1">
         <li :class="[ ((resultData.current_page == 1) ? 'disabled' : '') ]">
@@ -36,13 +35,13 @@
                 type: Number,
                 default: 5
             }
-        }, // props
+        },
 
         data(){
             return {
 
             };
-        }, // data
+        },
 
         methods: {
             range(start, count) {
@@ -51,11 +50,10 @@
                         return index + start;
                     });
             },
-
             pageClicked(pageNo){
                 this.$emit('clicked', pageNo);
             },
-        }, // methods
+        },
 
         computed: {
             paginateLoop(){
@@ -74,13 +72,12 @@
 
             numberOfPage(){
                 let results = this.resultData;
-
                 if(results.last_page < this.midSize){
                     return results.last_page;
                 }else{
                     return this.midSize;
                 }
             }
-        }, // computed
+        },
     };
 </script>
